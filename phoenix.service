@@ -10,7 +10,8 @@ Environment="MIX_ENV=prod"
 Environment="DATABASE_URL=ecto://postgres:postgres@localhost/phoenix"
 WorkingDirectory=/root/phoenix
 ExecStart=/root/phoenix/phoenix_server_start.sh
-Restart=always
+Restart=on-failure
+RestartSec=180s
 KillSignal=SIGQUIT
 SyslogIdentifier=phoenix
 RemainAfterExit=no
